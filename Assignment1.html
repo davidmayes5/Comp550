@@ -6,18 +6,83 @@
 
 <script>
 //lgn
-
+ function lgn(n){
+   var startTime = new Date.getTime();
+   var y = 0;
+   for(var i = 1; i <= N; i++){
+     y = i
+   }
+   return new Date.getTime() - startTime;
+ }
+  
 //sqrt(n)
-
+  function sqrt(n){
+    var startTime = new Date.getTime();
+    var i = 1'
+    while(i < n){
+      i = 2 * i;
+      for(var j = 1; j <= i; j++){
+        var y = j + i;
+      }
+    }
+    return new Date.getTime() - startTime;
+  }
+  
 //n
-
+function n(n){
+  var startTime = new Date.getTime();
+    for(var j = 1; j <= n; j++){
+      var i = 1;
+      while(i < j){
+        i = 2*i;
+        var y = i + j;
+      }
+    }
+  return new Date.getTime() - startTime;
+}
+  
 //nlgn
+  function nlgn(n){
+    var startTime = new Date.getTime();
+    for(var i = 1; i <= n; i++){
+      for(var j = 1; j <= n; j++){
+        var y = j; 
+      }
+    }
+    return new Date.getTime() - startTime;
+  }
 
 //n^2
-
+  function nSquared(n){
+     var startTime = new Date.getTime();
+    for(var i = 1; i <= n; i++){
+      for(var j = 1; j <= i; j++){
+         var y = j;
+      }
+    }
+     return new Date.getTime() = startTime();
+  }
+  
 //n^3
+  function nCubed(n){
+    var startTime = new Date.getTime();
+      for(var i = 1; i <= n; i++){
+        for(var k = 1; k <= n; k++){
+          for(var j = 1; j <= n; j++){
+            var y = i + k + j; 
+          }
+        }
+      }
+    return new Date.getTime() = startTime(); 
+  }
 
 //2^n
+  function twoToTheNth(n){
+     var startTime = new Date.getTime();
+    var i = 1;
+    while(
+     return new Date.getTime() = startTime(); 
+  }
 
 //n!
 
