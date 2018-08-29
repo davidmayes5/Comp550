@@ -3,21 +3,49 @@
 <body>
 
 <h1> David Mayes's Assignment 1 </h1>
+<h3> func1 data </h3>
+<p id="func1"></p>
+<h3> func2 data </h3>
+<p id="func2"></p>
+<h3> func3 data </h3>
+<p id="func3"></p>
+<h3> func4 data </h3>
+<p id="func4"></p>
+<h3> func5 data </h3>
+<p id="func5"></p>
+<h3> func6 data </h3>
+<p id="func6"></p>
+<h3> func7 data </h3>
+<p id="func7"></p>
+<h3> func8 data </h3>
+<p id="func8"></p>
 
 <script>
-//lgn
- function lgn(n){
-   var startTime = new Date.getTime();
+  var arrayOfN1 = [8, 6400, 9100, 12800, 18200, 25600, 36300, 51200, 72500, 102400, 144900, 204800, 289700, 409600, 1000000, 1000000000];
+  var arrayOfN2 = [8, 64, 91, 128, 182, 256, 363, 512, 725, 1024, 2048, 4096, 10000, 20000, 30000];
+  var arrayOfN4 = [8, 64, 91, 128, 182, 256, 363, 512, 725, 1024];
+  var arrayOfN3 = [4, 7, 8, 9];
+
+//func1
+ function func1(n){
+   var startTime = new Date().getTime();
    var y = 0;
-   for(var i = 1; i <= N; i++){
+   for(var i = 1; i <= n; i++){
      y = i;
    }
-   return new Date.getTime() - startTime;
+   return new Date().getTime() - startTime;
  }
-  
-//sqrt(n)
-  function sqrt(n){
-    var startTime = new Date.getTime();
+
+ var func1Runtimes = [];
+ for(var i = 0; i < arrayOfN1.length; i++){
+  func1Runtimes.push(func1(arrayOfN1[i]));
+ }
+ document.getElementById("func1").innerHTML = func1Runtimes.toString();
+
+
+//func2
+ function func2(n){
+    var startTime = new Date().getTime();
     var i = 1;
     while(i < n){
       i = 2 * i;
@@ -25,12 +53,18 @@
         var y = j + i;
       }
     }
-    return new Date.getTime() - startTime;
+    return new Date().getTime() - startTime;
   }
+
+  var func2Runtimes = [];
+ for(var i = 0; i < arrayOfN1.length; i++){
+  func2Runtimes.push(func2(arrayOfN1[i]));
+ }
+ document.getElementById("func2").innerHTML = func2Runtimes.toString();
   
-//n
-function n(n){
-  var startTime = new Date.getTime();
+//func3
+function func3(n){
+  var startTime = new Date().getTime();
     for(var j = 1; j <= n; j++){
       var i = 1;
       while(i < j){
@@ -38,34 +72,55 @@ function n(n){
         var y = i + j;
       }
     }
-  return new Date.getTime() - startTime;
+  return new Date().getTime() - startTime;
 }
+
+ var func3Runtimes = [];
+ for(var i = 0; i < arrayOfN1.length; i++){
+  func3Runtimes.push(func3(arrayOfN1[i]));
+ }
+ document.getElementById("func3").innerHTML = func3Runtimes.toString();
   
-//nlgn
-  function nlgn(n){
-    var startTime = new Date.getTime();
+//func4
+  function func4(n){
+    //n^2 runtime
+    var startTime = new Date().getTime();
     for(var i = 1; i <= n; i++){
       for(var j = 1; j <= n; j++){
         var y = j; 
       }
     }
-    return new Date.getTime() - startTime;
+    return new Date().getTime() - startTime;
   }
 
-//n^2
-  function nSquared(n){
-     var startTime = new Date.getTime();
+   var func4Runtimes = [];
+ for(var i = 0; i < arrayOfN2.length; i++){
+  func4Runtimes.push(func4(arrayOfN2[i]));
+ }
+ document.getElementById("func4").innerHTML = func4Runtimes.toString();
+
+//func5
+  function func5(n){
+    //n^2 runtime
+     var startTime = new Date().getTime();
     for(var i = 1; i <= n; i++){
       for(var j = 1; j <= i; j++){
          var y = j;
       }
     }
-     return new Date.getTime() = startTime();
+     return new Date().getTime() - startTime;
   }
+
+   var func5Runtimes = [];
+ for(var i = 0; i < arrayOfN2.length; i++){
+  func5Runtimes.push(func5(arrayOfN2[i]));
+ }
+ document.getElementById("func5").innerHTML = func5Runtimes.toString();
   
-//n^3
-  function nCubed(n){
-    var startTime = new Date.getTime();
+//func6
+  function func6(n){
+    //n^3 runtime
+    var startTime = new Date().getTime();
       for(var i = 1; i <= n; i++){
         for(var k = 1; k <= n; k++){
           for(var j = 1; j <= n; j++){
@@ -73,15 +128,75 @@ function n(n){
           }
         }
       }
-    return new Date.getTime() = startTime(); 
+    return new Date().getTime() - startTime; 
   }
 
-//2^n
+   var func6Runtimes = [];
+ for(var i = 0; i < arrayOfN4.length; i++){
+  func6Runtimes.push(func6(arrayOfN4[i]));
+ }
+ document.getElementById("func6").innerHTML = func6Runtimes.toString();
 
-//n!
+
+//func7
+function func7(n){
+  //n! runtime
+  var startTime = new Date().getTime();
+  var array = [];
+  for(var i = 0; i < n; i++){
+    array.push(0);
+  }
+  var i = 0;
+  while(i < n){
+    i = 0;
+    while(array[i] == (n - i)){
+      array[i] = 0;
+      i++;
+      if(i == n){break;}
+    }
+    if (i < n){
+      array[i] = array[i] + 1;
+    }
+  }
+  return new Date().getTime() - startTime;
+}
+
+   var func7Runtimes = [];
+ for(var i = 0; i < arrayOfN3.length; i++){
+  func7Runtimes.push(func7(arrayOfN3[i]));
+ }
+ document.getElementById("func7").innerHTML = func7Runtimes.toString();
 
 
+//func8
+function func8(n){
+  //n^n runtime
+  var startTime = new Date().getTime();
+  var array = [];
+  for(var i = 0; i < n; i++){
+    array.push(0);
+  }
+  var i = 0;
+  while(i < n - 1){
+    i = 0;
+    while(array[i] == n){
+      array[i] = 0;
+      i++;
+      if(i == n){break;} 
+    }
+    if(i < n){
+      array[i] = array[i] + 1;
+    }
+  } 
+  return new Date().getTime() - startTime;
+}
+
+var func8Runtimes = [];
+ for(var i = 0; i < arrayOfN3.length; i++){
+  func8Runtimes.push(func8(arrayOfN3[i]));
+ }
+ document.getElementById("func8").innerHTML = func8Runtimes.toString();
 </script>
 
-</html>
 </body>
+</html>
