@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<p id="arrayDisplay1">TEST</p>
+<p id="arrayDisplay2"></p>
+
+<body>
+
+<script type="text/javascript">
+
+//var testArray = [1, 3, 5, 2, 7, 56, 23, 21, 54];
+
+	function insertsort(a){
+		var c = new Array(a.length);
+		for(var k = 0; k < a.length; k++){
+			c[k] = k;
+		}
+		for(var i = 1; i < a.length; i++){
+			var key = a[i];
+			var index = c[i];
+			var j = i - 1;
+			while(j > 0 && a[j] > key){
+				a[j+1] = a[j];
+				c[j+1] = c[j];
+				j--;
+				if(j <= 0 || a[j] <= key){
+					a[j+1] = key;
+					c[j+1] = index;
+				}
+			}
+		}
+		var tempObject = {a:a, c:c};
+		return tempObject;
+	}
+
+	var sortedArray = insertsort(testArray);
+
+	document.getElementById("arrayDisplay1").innerHTML = sortedArray.a.toString();
+	document.getElementById("arrayDisplay2").innerHTML = sortedArray.c.toString();
+
+</script>
+
+</body>
+</html>
